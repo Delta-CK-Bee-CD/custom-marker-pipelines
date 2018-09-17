@@ -27,12 +27,11 @@ pipeline {
          when {
            beforeAgent true
            branch 'master'
-         }
-         options {
-           timeout(time: 30, unit: 'SECONDS') 
-         }         
+         }        
          input {
            message "Should we continue?"
+           submitter "ck-ops"
+           submitterParameter "APPROVER"
          }
          steps {
            echo "Continuing with deployment"
