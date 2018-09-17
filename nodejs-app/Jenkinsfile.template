@@ -25,6 +25,7 @@ pipeline {
             beforeAgent true
             branch 'master'
          }
+         agent any
          steps {
             echo "TODO - build and push image"
             unstash 'app'
