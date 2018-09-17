@@ -19,10 +19,8 @@ pipeline {
             beforeAgent true
             branch 'master'
          }
-         agent { label 'nodejs-app' }
          steps {
             echo "TODO - build and push image"
-            sh 'java -version'
          }
       }  
       stage('Deploy') {
@@ -30,6 +28,9 @@ pipeline {
            beforeAgent true
            branch 'master'
          }
+         options {
+           timeout(time: 30, unit: 'SECONDS') 
+         }         
          input {
            message "Should we continue?"
          }
