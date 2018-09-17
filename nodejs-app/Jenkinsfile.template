@@ -69,7 +69,7 @@ spec:
           junit 'res*.xml'
         }
       }    
-    }replace      
+    }     
       stage('Build and Push Image') {
          when {
             beforeAgent true
